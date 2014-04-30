@@ -1,2 +1,3 @@
-#w01 Completed Assignment: Turn in "Hello World" (Due 21 Apr)
+#Write a program that uses a print statement to say 'hello world' as shown below.
+
 print "hello world"
