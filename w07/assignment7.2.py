@@ -12,7 +12,7 @@ def openfile():
     return fh
 
 def computeAverage(fh):
-    average = 0
+    average = None
     count = 0
     for line in fh:
         if line.startswith("X-DSPAM-Confidence:") :
@@ -20,6 +20,8 @@ def computeAverage(fh):
             columnPos = line.find(":")
             number = line[columnPos+1::1]
             snumber = number.lstrip()
+            if average is None:
+                average = 0
             snumber = float(snumber.rstrip())
             average = ( (average * ((count -1)) + snumber) / count )
             #print "new average", average
